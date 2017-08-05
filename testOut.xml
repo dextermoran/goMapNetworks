@@ -1,0 +1,308 @@
+:> sudo nmap -oX - -O 192.168.0.0/24 -p 22,80,443
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/local/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.60 scan initiated Fri Aug  4 19:31:36 2017 as: nmap -oX - -O -p 22,80,443 192.168.0.0/24 -->
+<nmaprun scanner="nmap" args="nmap -oX - -O -p 22,80,443 192.168.0.0/24" start="1501893096" startstr="Fri Aug  4 19:31:36 2017" version="7.60" xmloutputversion="1.04">
+  <scaninfo type="syn" protocol="tcp" numservices="3" services="22,80,443"/>
+  <verbose level="0"/>
+  <debugging level="0"/>
+  <host starttime="1501893097" endtime="1501893100"><status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.0.1" addrtype="ipv4"/>
+    <address addr="84:16:F9:CB:9E:C2" addrtype="mac" vendor="Tp-link Technologies"/>
+    <hostnames></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="443"><state state="closed" reason="reset" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+    </ports>
+    <os><portused state="open" proto="tcp" portid="22"/>
+      <portused state="closed" proto="tcp" portid="443"/>
+      <portused state="closed" proto="udp" portid="44099"/>
+      <osmatch name="Linux 2.6.23 - 2.6.38" accuracy="100" line="49311">
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="2.6.X" accuracy="100">
+          <cpe>cpe:/o:linux:linux_kernel:2.6</cpe>
+        </osclass>
+      </osmatch>
+    </os>
+    <uptime seconds="3159" lastboot="Fri Aug  4 18:39:07 2017"/>
+    <distance value="1"/>
+    <tcpsequence index="194" difficulty="Good luck!" values="89443D72,89A46534,894D5FA5,89D4B3C2,899A9318,89D91F41"/>
+    <ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+    <tcptssequence class="other" values="C1283,C129F,C12B8,C12D1,C12EA,C1304"/>
+    <times srtt="12474" rttvar="5501" to="100000"/>
+  </host>
+  <host starttime="1501893097" endtime="1501893105"><status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.0.100" addrtype="ipv4"/>
+    <address addr="A4:8D:3B:E7:7B:C1" addrtype="mac" vendor="Vizio"/>
+    <hostnames></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="closed" reason="reset" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="80"><state state="closed" reason="reset" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="443"><state state="closed" reason="reset" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+    </ports>
+    <os><portused state="closed" proto="tcp" portid="22"/>
+      <portused state="closed" proto="udp" portid="34173"/>
+    </os>
+    <distance value="1"/>
+    <times srtt="9668" rttvar="6652" to="100000"/>
+  </host>
+  <host starttime="1501893097" endtime="1501893105"><status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.0.103" addrtype="ipv4"/>
+    <address addr="AC:BC:32:7F:FF:A1" addrtype="mac" vendor="Apple"/>
+    <hostnames></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="closed" reason="reset" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="80"><state state="closed" reason="reset" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="443"><state state="closed" reason="reset" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+    </ports>
+    <os><portused state="closed" proto="tcp" portid="22"/>
+      <portused state="closed" proto="udp" portid="36614"/>
+    </os>
+    <distance value="1"/>
+    <times srtt="22109" rttvar="12074" to="100000"/>
+  </host>
+  <host starttime="1501893097" endtime="1501893105"><status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.0.104" addrtype="ipv4"/>
+    <address addr="6C:0B:84:9A:16:EE" addrtype="mac" vendor="Universal Global Scientific Industrial"/>
+    <hostnames></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="closed" reason="reset" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="443"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+    </ports>
+    <os><portused state="open" proto="tcp" portid="80"/>
+      <portused state="closed" proto="tcp" portid="22"/>
+      <osmatch name="VMware ESXi 6.0.0" accuracy="98" line="98482">
+        <osclass type="specialized" vendor="VMware" osfamily="ESXi" osgen="6.X" accuracy="98">
+          <cpe>cpe:/o:vmware:esxi:6.0.0</cpe>
+        </osclass>
+      </osmatch>
+      <osmatch name="VMware ESXi 5.0 - 5.5" accuracy="97" line="98410">
+        <osclass type="specialized" vendor="VMware" osfamily="ESXi" osgen="5.X" accuracy="97">
+          <cpe>cpe:/o:vmware:esxi:5</cpe>
+        </osclass>
+      </osmatch>
+      <osmatch name="VMware ESXi 5.5" accuracy="96" line="98464">
+        <osclass type="specialized" vendor="VMware" osfamily="ESXi" osgen="5.X" accuracy="96">
+          <cpe>cpe:/o:vmware:esxi:5.5</cpe>
+        </osclass>
+      </osmatch>
+      <osmatch name="VMware ESXi 4.1" accuracy="95" line="98208">
+        <osclass type="specialized" vendor="VMware" osfamily="ESXi" osgen="4.X" accuracy="95">
+          <cpe>cpe:/o:vmware:esxi:4.1</cpe>
+        </osclass>
+      </osmatch>
+      <osmatch name="Crestron XPanel control system" accuracy="92" line="18644">
+        <osclass type="specialized" vendor="Crestron" osfamily="2-Series" accuracy="92">
+          <cpe>cpe:/o:crestron:2_series</cpe>
+        </osclass>
+      </osmatch>
+      <osmatch name="FreeBSD 7.0-RELEASE-p1 - 10.0-CURRENT" accuracy="92" line="26571">
+        <osclass type="general purpose" vendor="FreeBSD" osfamily="FreeBSD" osgen="7.X" accuracy="92">
+          <cpe>cpe:/o:freebsd:freebsd:7</cpe>
+        </osclass>
+        <osclass type="general purpose" vendor="FreeBSD" osfamily="FreeBSD" osgen="8.X" accuracy="92">
+          <cpe>cpe:/o:freebsd:freebsd:8</cpe>
+        </osclass>
+        <osclass type="general purpose" vendor="FreeBSD" osfamily="FreeBSD" osgen="9.X" accuracy="92">
+          <cpe>cpe:/o:freebsd:freebsd:9</cpe>
+        </osclass>
+        <osclass type="general purpose" vendor="FreeBSD" osfamily="FreeBSD" osgen="10.X" accuracy="92">
+          <cpe>cpe:/o:freebsd:freebsd:10</cpe>
+        </osclass>
+      </osmatch>
+      <osmatch name="NAS4Free (FreeBSD 9.1)" accuracy="91" line="27878">
+        <osclass type="general purpose" vendor="FreeBSD" osfamily="FreeBSD" osgen="9.X" accuracy="91">
+          <cpe>cpe:/o:freebsd:freebsd:9.1</cpe>
+          <cpe>cpe:/a:nas4free:nas4free</cpe>
+        </osclass>
+      </osmatch>
+      <osmatch name="VMware ESX Server 4.0.1" accuracy="91" line="97822">
+        <osclass type="specialized" vendor="VMware" osfamily="ESX Server" osgen="4.X" accuracy="91">
+          <cpe>cpe:/o:vmware:esx:4.0:1</cpe>
+        </osclass>
+      </osmatch>
+      <osmatch name="FreeBSD 5.2.1-RELEASE" accuracy="90" line="25339">
+        <osclass type="general purpose" vendor="FreeBSD" osfamily="FreeBSD" osgen="5.X" accuracy="90">
+          <cpe>cpe:/o:freebsd:freebsd:5.2.1</cpe>
+        </osclass>
+      </osmatch>
+      <osmatch name="FreeBSD 5.3 - 5.5" accuracy="90" line="25362">
+        <osclass type="general purpose" vendor="FreeBSD" osfamily="FreeBSD" osgen="5.X" accuracy="90">
+          <cpe>cpe:/o:freebsd:freebsd:5</cpe>
+        </osclass>
+      </osmatch>
+    </os>
+    <uptime seconds="3304" lastboot="Fri Aug  4 18:36:42 2017"/>
+    <distance value="1"/>
+    <tcpsequence index="168" difficulty="Good luck!" values="E40F85AB,FB00BD23,FCE7BA3,26F53D8F,3BC4133F,52ADF3F7"/>
+    <ipidsequence class="Incremental" values="43FD,43FE,43FF,4400,4401,4402"/>
+    <tcptssequence class="100HZ" values="50A2A,50A35,50A3F,50A4A,50A54,50A5F"/>
+    <times srtt="12882" rttvar="4796" to="100000"/>
+  </host>
+  <host starttime="1501893097" endtime="1501893100"><status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.0.105" addrtype="ipv4"/>
+    <address addr="00:0C:29:4B:27:5E" addrtype="mac" vendor="VMware"/>
+    <hostnames></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="443"><state state="closed" reason="reset" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+    </ports>
+    <os><portused state="open" proto="tcp" portid="22"/>
+      <portused state="closed" proto="tcp" portid="443"/>
+      <portused state="closed" proto="udp" portid="37621"/>
+      <osmatch name="Linux 3.2 - 4.8" accuracy="100" line="62168">
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="100">
+          <cpe>cpe:/o:linux:linux_kernel:3</cpe>
+        </osclass>
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="100">
+          <cpe>cpe:/o:linux:linux_kernel:4</cpe>
+        </osclass>
+      </osmatch>
+    </os>
+    <uptime seconds="2831" lastboot="Fri Aug  4 18:44:35 2017"/>
+    <distance value="1"/>
+    <tcpsequence index="261" difficulty="Good luck!" values="A9A71398,DBB26282,3D5E889D,22AEF817,20EBED66,C67AFD6C"/>
+    <ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+    <tcptssequence class="other" values="ABB20,ABB3C,ABB55,ABB6E,ABB87,ABBA0"/>
+    <times srtt="12368" rttvar="4950" to="100000"/>
+  </host>
+  <host starttime="1501893097" endtime="1501893100"><status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.0.109" addrtype="ipv4"/>
+    <address addr="00:0C:29:23:89:AE" addrtype="mac" vendor="VMware"/>
+    <hostnames></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="80"><state state="closed" reason="reset" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="443"><state state="closed" reason="reset" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+    </ports>
+    <os><portused state="open" proto="tcp" portid="22"/>
+      <portused state="closed" proto="tcp" portid="80"/>
+      <portused state="closed" proto="udp" portid="32858"/>
+      <osmatch name="Linux 3.2 - 4.8" accuracy="100" line="62168">
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="100">
+          <cpe>cpe:/o:linux:linux_kernel:3</cpe>
+        </osclass>
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="100">
+          <cpe>cpe:/o:linux:linux_kernel:4</cpe>
+        </osclass>
+      </osmatch>
+    </os>
+    <uptime seconds="2831" lastboot="Fri Aug  4 18:44:35 2017"/>
+    <distance value="1"/>
+    <tcpsequence index="254" difficulty="Good luck!" values="86954155,BB640B2B,5372AC5,196AFEBD,E85637C9,A4F0E14C"/>
+    <ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+    <tcptssequence class="other" values="ABAF3,ABB0F,ABB28,ABB41,ABB5A,ABB73"/>
+    <times srtt="12029" rttvar="5176" to="100000"/>
+  </host>
+  <host starttime="1501893097" endtime="1501893105"><status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.0.110" addrtype="ipv4"/>
+    <address addr="C4:1C:FF:47:60:DC" addrtype="mac" vendor="Vizio"/>
+    <hostnames></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="closed" reason="reset" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="80"><state state="closed" reason="reset" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="443"><state state="closed" reason="reset" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+    </ports>
+    <os><portused state="closed" proto="tcp" portid="22"/>
+      <portused state="closed" proto="udp" portid="39586"/>
+    </os>
+    <distance value="1"/>
+    <times srtt="12179" rttvar="7087" to="100000"/>
+  </host>
+  <host starttime="1501893097" endtime="1501893100"><status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.0.111" addrtype="ipv4"/>
+    <address addr="BC:60:A7:9C:23:0D" addrtype="mac" vendor="Sony Interactive Entertainment"/>
+    <hostnames></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="closed" reason="reset" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="80"><state state="closed" reason="reset" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="443"><state state="closed" reason="reset" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+    </ports>
+    <os><portused state="closed" proto="tcp" portid="22"/>
+      <portused state="closed" proto="udp" portid="36141"/>
+    </os>
+    <distance value="1"/>
+    <times srtt="11537" rttvar="8073" to="100000"/>
+  </host>
+  <host starttime="1501893097" endtime="1501893100"><status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.0.114" addrtype="ipv4"/>
+    <address addr="00:0C:29:A4:B8:E0" addrtype="mac" vendor="VMware"/>
+    <hostnames></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="80"><state state="filtered" reason="host-prohibited" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="443"><state state="filtered" reason="host-prohibited" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+    </ports>
+    <os><portused state="open" proto="tcp" portid="22"/>
+      <osmatch name="Linux 3.10 - 4.8" accuracy="100" line="60500">
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="100">
+          <cpe>cpe:/o:linux:linux_kernel:3</cpe>
+        </osclass>
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="100">
+          <cpe>cpe:/o:linux:linux_kernel:4</cpe>
+        </osclass>
+      </osmatch>
+      <osmatch name="Linux 3.2 - 4.8" accuracy="100" line="62168">
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="100">
+          <cpe>cpe:/o:linux:linux_kernel:3</cpe>
+        </osclass>
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="100">
+          <cpe>cpe:/o:linux:linux_kernel:4</cpe>
+        </osclass>
+      </osmatch>
+    </os>
+    <uptime seconds="2790" lastboot="Fri Aug  4 18:45:16 2017"/>
+    <distance value="1"/>
+    <tcpsequence index="258" difficulty="Good luck!" values="610F0D42,10754A78,6956DB43,496077CB,3B30A0FB,1003B1BA"/>
+    <ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+    <tcptssequence class="1000HZ" values="2A7879,2A78E8,2A794D,2A79B1,2A7A16,2A7A7A"/>
+    <times srtt="9734" rttvar="6268" to="100000"/>
+  </host>
+  <host starttime="1501893097" endtime="1501893100"><status state="up" reason="arp-response" reason_ttl="0"/>
+    <address addr="192.168.0.115" addrtype="ipv4"/>
+    <address addr="00:0C:29:EC:12:54" addrtype="mac" vendor="VMware"/>
+    <hostnames></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="80"><state state="closed" reason="reset" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="443"><state state="closed" reason="reset" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+    </ports>
+    <os><portused state="open" proto="tcp" portid="22"/>
+      <portused state="closed" proto="tcp" portid="80"/>
+      <portused state="closed" proto="udp" portid="31603"/>
+      <osmatch name="Linux 3.2 - 4.8" accuracy="100" line="62168">
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="3.X" accuracy="100">
+          <cpe>cpe:/o:linux:linux_kernel:3</cpe>
+        </osclass>
+        <osclass type="general purpose" vendor="Linux" osfamily="Linux" osgen="4.X" accuracy="100">
+          <cpe>cpe:/o:linux:linux_kernel:4</cpe>
+        </osclass>
+      </osmatch>
+    </os>
+    <uptime seconds="2808" lastboot="Fri Aug  4 18:44:58 2017"/>
+    <distance value="1"/>
+    <tcpsequence index="261" difficulty="Good luck!" values="512198D4,2C0BDCBB,2D764292,BFFD13A0,86F6CA07,48E29EEC"/>
+    <ipidsequence class="All zeros" values="0,0,0,0,0,0"/>
+    <tcptssequence class="other" values="ABAC0,ABADC,ABAF5,ABB0E,ABB27,ABB41"/>
+    <times srtt="12291" rttvar="4991" to="100000"/>
+  </host>
+  <host starttime="1501893106" endtime="1501893106"><status state="up" reason="localhost-response" reason_ttl="0"/>
+    <address addr="192.168.0.112" addrtype="ipv4"/>
+    <hostnames></hostnames>
+    <ports>
+      <port protocol="tcp" portid="22"><state state="closed" reason="reset" reason_ttl="64"/><service name="ssh" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="80"><state state="closed" reason="reset" reason_ttl="64"/><service name="http" method="table" conf="3"/></port>
+      <port protocol="tcp" portid="443"><state state="closed" reason="reset" reason_ttl="64"/><service name="https" method="table" conf="3"/></port>
+    </ports>
+    <os><portused state="closed" proto="tcp" portid="22"/>
+      <portused state="closed" proto="udp" portid="42582"/>
+    </os>
+    <distance value="0"/>
+    <times srtt="95" rttvar="533" to="100000"/>
+  </host>
+  <runstats><finished time="1501893106" timestr="Fri Aug  4 19:31:46 2017" elapsed="11.70" summary="Nmap done at Fri Aug  4 19:31:46 2017; 256 IP addresses (11 hosts up) scanned in 11.70 seconds" exit="success"/><hosts up="11" down="245" total="256"/>
+  </runstats>
+</nmaprun>
