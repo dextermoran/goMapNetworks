@@ -56,12 +56,6 @@ func parseXml(reader io.Reader) (hosts []Host, err error) {
 		return hosts, derr
 	}
 
-	fmt.Println("!!!!!!!!!!!!!!!!")
-	fmt.Println(doc)
-
-	fmt.Println("$$$$$$$$$$$$$")
-	fmt.Println(doc.Hosts)
-
 	for _, xh := range doc.Hosts {
 		h := Host{}
 		for _, xa := range xh.Addrs {
@@ -72,13 +66,12 @@ func parseXml(reader io.Reader) (hosts []Host, err error) {
 				h.Mac = xa.Addr
 			}
 		}
-		/*
+
 		for _, xo := range xh.Os {
 			for _, xom := range xo.OsMatch {
-				h.Os = xo.Name
+				h.Os = xom.Name
 			}
 		}
-		*/
 
 		if h.Ip != "" && h.Mac != "" {
 			hosts = append(hosts, h)
