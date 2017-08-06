@@ -10,8 +10,8 @@ import (
 	"bytes"
 )
 
-func scanOpenTcpPorts(subnet string, ports string) (io.Reader, error) {
-	c := exec.Command("nmap", "-oX", "-", "-sS", "-O", subnet, "-p", ports)
+func scanOpenTcpPorts(subnet string) (io.Reader, error) {
+	c := exec.Command("nmap", "-oX", "-", "-sS", "-O", subnet, "-F")
 	cout, cerr := c.Output()
 	if cerr != nil {
 		return nil, fmt.Errorf("need root")
@@ -87,8 +87,8 @@ type Host struct {
 	Os string
 }
 
-func ScanOpenTcpPorts(subnet, ports string) (hosts []Host, err error) {
-	reader, rerr := scanOpenTcpPorts(subnet, ports)
+func ScanOpenTcpPorts(subnet string) (hosts []Host, err error) {
+	reader, rerr := scanOpenTcpPorts(subnet)
 	if rerr != nil {
 		return hosts, rerr
 	}
