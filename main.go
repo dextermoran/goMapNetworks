@@ -8,7 +8,7 @@ import (
 )
 
 type Hello struct {
-	Greeting string
+	Greeting []nmap.Host
 }
 
 func (h *Hello) Render() string {
@@ -22,6 +22,8 @@ func (h *Hello) Render() string {
     `
 }
 
+/*
+
 func ProcessNmap(x []nmap.Host){
 	var foundHosts []string
 	i := 0
@@ -33,6 +35,8 @@ func ProcessNmap(x []nmap.Host){
 	return foundHosts
 }
 
+*/
+
 func (h *Hello) OnInputChange(arg app.ChangeArg) {
 	input := arg.Value
 	fmt.Println("scanning...")
@@ -43,8 +47,8 @@ func (h *Hello) OnInputChange(arg app.ChangeArg) {
 	}
 	fmt.Println(hosts)
 
-	fmt.Println(ProcessNmap(hosts))
-	h.Greeting = arg.Value
+
+	h.Greeting = hosts
 	app.Render(h)
 }
 
@@ -53,8 +57,6 @@ func init() {
 }
 
 func main() {
-
-	fmt.Println("trying to launch window")
 
 	app.OnLaunch = func() {
 		win := app.NewWindow(app.Window{
