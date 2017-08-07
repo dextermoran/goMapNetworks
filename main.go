@@ -2,42 +2,39 @@ package main
 
 import (
 	"fmt"
-	"./nmapLib"
-	"net/http"
-	"encoding/json"
-	"os/exec"
+	"goMapNetworks/nmap"
+	_ "github.com/murlokswarm/mac"
+	"github.com/murlokswarm/app"
 )
 
-
-
-func main() {
-	exec.Command("open", "http://127.0.0.1:3000")
-
-
-
-	fmt.Println("go server running \n")
-	http.HandleFunc("/", serveRest)
-	http.ListenAndServe("localhost:3000", nil)
-
-
-
+type Hello struct {
+	Greeting string
 }
 
-
-func serveRest(w http.ResponseWriter, r *http.Request) {
-  response, err := getJsonResponse()
-  if err != nil {
-    panic(err)
-  }
-
-  fmt.Fprintf(w, string(response))
-  fmt.Printf("json served! \n")
+func (h *Hello) Render() string {
+	return `
+<div class="WindowLayout">
+    <div class="HelloBox">
+			<span>{{if .Greeting}}{{html .Greeting}}{{else}}<h1>Hey Buddy, what network do you want to scan?</h1>
+			        <input type="text" placeholder="(192.168.0.0/24)" onchange="OnInputChange" />{{end}}</span>
+    </div>
+</div>
+    `
 }
 
-func getJsonResponse() ([]byte, error) {
-	var input string
-	fmt.Println("Enter network subnet to scan: ")
-	fmt.Scanln(&input)
+func ProcessNmap(x []nmap.Host){
+	var foundHosts []string
+	i := 0
+	for _, n := range x {
+		i++
+		fmt.Println(n)
+		foundHosts[i] = fmt.Sprintf(n)
+	}
+	return foundHosts
+}
+
+func (h *Hello) OnInputChange(arg app.ChangeArg) {
+	input := arg.Value
 	fmt.Println("scanning...")
 	hosts, err := nmap.ScanOpenTcpPorts(input)
 	fmt.Println("scanned!")
@@ -46,5 +43,32 @@ func getJsonResponse() ([]byte, error) {
 	}
 	fmt.Println(hosts)
 
-  return json.MarshalIndent(hosts, "", "  ")
+	fmt.Println(ProcessNmap(hosts))
+	h.Greeting = arg.Value
+	app.Render(h)
+}
+
+func init() {
+	app.RegisterComponent(&Hello{})
+}
+
+func main() {
+
+	fmt.Println("trying to launch window")
+
+	app.OnLaunch = func() {
+		win := app.NewWindow(app.Window{
+			Title:          "Hello World",
+			Width:          1280,
+			Height:         720,
+			TitlebarHidden: true,
+		})
+
+		hello := &Hello{}
+		win.Mount(hello)
+	}
+
+	app.Run()
+
+
 }
